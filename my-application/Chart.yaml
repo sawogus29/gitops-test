@@ -1,0 +1,15 @@
+apiVersion: v2
+name: my-application
+description: A Helm chart for Kubernetes
+
+# Dependency list
+dependencies:
+  - name: web-frontend
+    version: "0.1.0"
+    repository: "file://../web-frontend"
+  - name: api-backend
+    version: "0.1.0"
+    repository: "file://../api-backend"
+  - name: database
+    version: "0.1.0"
+    repository: "file://../database"
