@@ -1,0 +1,6 @@
+api-backend:
+  fullnameOverride: "be-three"
+web-frontend:
+  fullnameOverride: "fe-three"
+database:
+  fullnameOverride: "db-three"
