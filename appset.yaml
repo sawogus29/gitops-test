@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: example-applicationset
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/sawogus29/gitops-test.git'
+        revision: HEAD
+        directories:
+          - path: values/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/your-repository.git'
+        targetRevision: HEAD
+        path: 'chart'
+        helm:
+          valueFiles:
+            - {{path}}/values-{{path.basename}}.yaml
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{path.basename}}'
