@@ -17,10 +17,10 @@ spec:
       source:
         repoURL: 'https://github.com/your-repository.git'
         targetRevision: HEAD
-        path: 'chart'
-        helm:
-          valueFiles:
-            - {{path}}/values-{{path.basename}}.yaml
+        path: 'charts/my-application'
+        # helm:
+        #   valueFiles:
+        #     - {{path}}/values-{{path.basename}}.yaml
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{path.basename}}'
