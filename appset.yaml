@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: example-applicationset
+  namespace: argocd
 spec:
   generators:
     - git:
@@ -12,10 +13,11 @@ spec:
   template:
     metadata:
       name: '{{path.basename}}'
+      namespace: argocd
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/your-repository.git'
+        repoURL: 'https://github.com/sawogus29/gitops-test.git'
         targetRevision: HEAD
         path: 'charts/my-application'
         # helm:
@@ -24,3 +26,7 @@ spec:
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{path.basename}}'
+      syncPolicy:
+        automated: {}
+        syncOptions:
+          - CreateNamespace=true
