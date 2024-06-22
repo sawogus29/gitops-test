@@ -20,13 +20,14 @@ spec:
         repoURL: 'https://github.com/sawogus29/gitops-test.git'
         targetRevision: HEAD
         path: 'charts/my-application'
-        # helm:
-        #   valueFiles:
-        #     - {{path}}/values-{{path.basename}}.yaml
+        helm:
+          valueFiles:
+            - '/values/{{path.basename}}/values-{{path.basename}}.yaml'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{path.basename}}'
       syncPolicy:
-        automated: {}
+        automated:
+          prune: true
         syncOptions:
           - CreateNamespace=true
