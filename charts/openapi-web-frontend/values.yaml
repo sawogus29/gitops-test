@@ -1,0 +1,3 @@
+nameOverride: ""
+web-frontend:
+  nameOverride: openapi-web-frontend
