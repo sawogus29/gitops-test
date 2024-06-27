@@ -6,9 +6,9 @@ version: 0.1.0
 
 # Dependency list
 dependencies:
-  - name: openapi-web-frontend
-    version: "0.1.0"
-    repository: "file://../openapi-web-frontend"
+  # - name: openapi-web-frontend
+  #   version: "0.1.0"
+  #   repository: "file://../openapi-web-frontend"
   - name: web-frontend
     version: "0.1.0"
     repository: "file://../web-frontend"
