@@ -4,7 +4,3 @@ web-frontend:
   fullnameOverride: "fe-two"
 database:
   fullnameOverride: "db-two"
-openapi-web-frontend:
-  fullnameOverride: "openapi-two"
-  web-frontend:
-    fullnameOverride: "openapi-two"

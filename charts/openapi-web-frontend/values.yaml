@@ -1,4 +1,9 @@
-fullnameOverride: ""
+fullnameOverride: "openapi-web-frontend"
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
 web-frontend:
   # Default values for web-frontend.
   # This is a YAML-formatted file.
