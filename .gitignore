@@ -1,4 +1,5 @@
 *.lock
+*.tgz
 
 charts/my-application/charts/*
 charts/openapi-web-frontend/charts/*
