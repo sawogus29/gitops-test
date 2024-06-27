@@ -1,9 +1,3 @@
-fullnameOverride: "openapi-web-frontend"
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: true
-  # Automatically mount a ServiceAccount's API credentials?
-  automount: true
 web-frontend:
   # Default values for web-frontend.
   # This is a YAML-formatted file.
@@ -18,7 +12,7 @@ web-frontend:
     tag: ""
 
   imagePullSecrets: []
-  nameOverride: ""
+  nameOverride: "openapi-web-frontend"
   fullnameOverride: "openapi-web-frontend"
 
   serviceAccount:
@@ -30,7 +24,7 @@ web-frontend:
     annotations: {}
     # The name of the service account to use.
     # If not set and create is true, a name is generated using the fullname template
-    name: ""
+    name: "hello"
 
   podAnnotations: {}
   podLabels: {}
