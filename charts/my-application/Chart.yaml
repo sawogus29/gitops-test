@@ -6,15 +6,9 @@ version: 0.1.0
 
 # Dependency list
 dependencies:
-  - name: foo
-    version: "0.1.0"
-    repository: "file://../foo"
   - name: openapi-web-frontend
     version: "0.1.0"
     repository: "file://../openapi-web-frontend"
-  - name: mylibchart
-    version: "0.1.0"
-    repository: "file://../mylibchart"
   - name: web-frontend
     version: "0.1.0"
     repository: "file://../web-frontend"
