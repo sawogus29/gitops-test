@@ -1,6 +1,6 @@
 api-backend:
-  fullnameOverride: "be-one"
+  fullnameOverride: "be-two"
 web-frontend:
-  fullnameOverride: "fe-one"
+  fullnameOverride: "fe-two"
 database:
-  fullnameOverride: "db-one"
+  fullnameOverride: "db-two"
