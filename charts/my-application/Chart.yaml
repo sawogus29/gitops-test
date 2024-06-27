@@ -6,9 +6,9 @@ version: 0.1.0
 
 # Dependency list
 dependencies:
-  - name: web-frontend
-    version: "0.1.0"
-    repository: "file://../web-frontend"
+  # - name: web-frontend
+  #   version: "0.1.0"
+  #   repository: "file://../web-frontend"
   - name: api-backend
     version: "0.1.0"
     repository: "file://../api-backend"
