@@ -48,14 +48,3 @@ Selector labels
 app.kubernetes.io/name: {{ include "web-frontend.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "web-frontend.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "web-frontend.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}
