@@ -1,3 +1,4 @@
 *.lock
 
 charts/my-application/charts/*
+charts/openapi-web-frontend/charts/*
