@@ -9,7 +9,7 @@ spec:
         repoURL: 'https://github.com/sawogus29/gitops-test.git'
         revision: HEAD
         directories:
-          - path: values/*
+          - path: values/envs/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -25,7 +25,7 @@ spec:
           helm:
             valueFiles:
             - $values/values/common/values-common.yaml
-            - $values/values/{{path.basename}}/values-{{path.basename}}.yaml
+            - $values/values/envs/{{path.basename}}/values-{{path.basename}}.yaml
         # values
         - repoURL: 'https://github.com/sawogus29/gitops-test.git'
           targetRevision: HEAD

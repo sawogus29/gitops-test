@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
       - /values/common/values-common.yaml
-      - /values/one/values-one.yaml
+      - /values/envs/one/values-one.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'apptest'

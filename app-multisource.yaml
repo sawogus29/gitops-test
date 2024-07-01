@@ -13,7 +13,7 @@ spec:
       helm:
         valueFiles:
         - $values/values/common/values-common.yaml
-        - $values/values/one/values-one.yaml
+        - $values/values/envs/one/values-one.yaml
     # values
     - repoURL: 'https://github.com/sawogus29/gitops-test.git'
       targetRevision: HEAD

@@ -9,7 +9,7 @@ spec:
         repoURL: 'https://github.com/sawogus29/gitops-test.git'
         revision: HEAD
         directories:
-          - path: values/*
+          - path: values/envs/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -23,7 +23,7 @@ spec:
         helm:
           valueFiles:
             - '/values/common/values-common.yaml'
-            - '/values/{{path.basename}}/values-{{path.basename}}.yaml'
+            - '/values/envs/{{path.basename}}/values-{{path.basename}}.yaml'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{path.basename}}'
