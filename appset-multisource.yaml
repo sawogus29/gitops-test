@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: example-applicationset
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/sawogus29/gitops-test.git'
+        revision: HEAD
+        directories:
+          - path: values/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+      namespace: argocd
+
+    spec:
+      project: default
+      sources:
+        # helm chart
+        - repoURL: registry-1.docker.io/sawogus29
+          chart: my-application
+          targetRevision: 0.1.0
+          helm:
+            valueFiles:
+            - $values/values/{{path.basename}}/values-{{path.basename}}.yaml
+        # values
+        - repoURL: 'https://github.com/sawogus29/gitops-test.git'
+          targetRevision: HEAD
+          ref: values
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+        syncOptions:
+          - CreateNamespace=true

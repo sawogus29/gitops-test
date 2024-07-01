@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apptest
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    # helm chart
+    - repoURL: registry-1.docker.io/sawogus29
+      chart: my-application
+      targetRevision: 0.1.0
+      helm:
+        valueFiles:
+        - $values/values/one/values-one.yaml
+    # values
+    - repoURL: 'https://github.com/sawogus29/gitops-test.git'
+      targetRevision: HEAD
+      ref: values
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: apptest
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
