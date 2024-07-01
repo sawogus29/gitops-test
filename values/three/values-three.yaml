@@ -1,6 +1,2 @@
-api-backend:
-  fullnameOverride: "be-three"
-web-frontend:
-  fullnameOverride: "fe-three"
-database:
-  fullnameOverride: "db-three"
+frontend2:
+  cmname: "three-frontend2"

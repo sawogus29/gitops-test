@@ -1,6 +1,2 @@
-api-backend:
-  fullnameOverride: "be-one"
-# web-frontend:
-#   fullnameOverride: "fe-one"
-database:
-  fullnameOverride: "db-one"
+frontend2:
+  cmname: "one-frontend2"

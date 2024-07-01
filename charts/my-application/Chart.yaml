@@ -6,12 +6,27 @@ version: 0.1.0
 
 # Dependency list
 dependencies:
-  # - name: web-frontend
+  ##==================== subchart --(depends on)--> application ===============================
+  ## case1. dep-updated subchart       => ✅
+  # - name: frontend1
   #   version: "0.1.0"
-  #   repository: "file://../web-frontend"
-  - name: api-backend
+  #   repository: "file://../frontend1"
+  ## case2. NOT dep-updated subchart + appchart  => ❌
+  # - name: frontend2
+  #   version: "0.1.0"
+  #   repository: "file://../frontend2"
+  # - name: frontend-app
+  #   version: "0.1.0"
+  #   repository: "file://../frontend-app"
+  ##==================== subchart --(depends on)--> library ===============================
+  ## case3. dep-updated subchart       => ✅
+  # - name: backend1
+  #   version: "0.1.0"
+  #   repository: "file://../backend1"
+  ## case4. NOT dep-updated subchart + libchart  => ✅👍
+  - name: backend2
     version: "0.1.0"
-    repository: "file://../api-backend"
-  - name: database
+    repository: "file://../backend2"
+  - name: backend-lib
     version: "0.1.0"
-    repository: "file://../database"
+    repository: "file://../backend-lib"

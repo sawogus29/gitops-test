@@ -1,2 +1,4 @@
 *.lock
 #*.tgz
+
+charts/my-application/charts/*.tgz
