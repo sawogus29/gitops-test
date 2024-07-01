@@ -9,9 +9,10 @@ spec:
     repoURL: 'https://github.com/sawogus29/gitops-test.git'
     targetRevision: HEAD
     path: 'charts/my-application'
-    # helm:
-    #   valueFiles:
-    #     - '/values/{{path.basename}}/values-{{path.basename}}.yaml'
+    helm:
+      valueFiles:
+      - /values/common/values-common.yaml
+      - /values/one/values-one.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'apptest'

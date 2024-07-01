@@ -7,10 +7,10 @@ version: 0.1.0
 # Dependency list
 dependencies:
   ##==================== subchart --(depends on)--> application ===============================
-  ## case1. dep-updated subchart       => ✅
-  # - name: frontend1
-  #   version: "0.1.0"
-  #   repository: "file://../frontend1"
+  # case1. dep-updated subchart       => ✅
+  - name: frontend1
+    version: "0.1.0"
+    repository: "file://../frontend1"
   ## case2. NOT dep-updated subchart + appchart  => ❌
   # - name: frontend2
   #   version: "0.1.0"

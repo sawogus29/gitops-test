@@ -1,0 +1,4 @@
+frontend1:
+  cmname: "common-frontend1"
+backend2:
+  cmname: "common-backend2"
